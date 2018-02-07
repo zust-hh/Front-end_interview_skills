@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="ev">
+    <style>
+      #ev {
+        width: 300px;
+        height: 100px;
+        background: red;
+        color: #fff;
+        text-align: center;
+        line-height: 100px;
+      }
+    </style>
+    目标元素
+  </div>
+  <script>
+    var ev = document.getElementById('ev');
+
+    // 第三个参数为true为捕获阶段触发，默认false为冒泡阶段触发
+    window.addEventListener('click',function() {
+      console.log('window captrue');
+    },true);
+
+    document.addEventListener('click',function() {
+      console.log('document captrue')
+    },true);
+
+    // 获取html标签的方法要注意
+    document.documentElement.addEventListener('click',function() {
+      console.log('html captrue')
+    },true)
+
+    document.body.addEventListener('click',function() {
+      console.log('body captrue')
+    },true);
+
+    ev.addEventListener('click',function() {
+      console.log('ev captrue')
+    },true)
+
+
+    // 自定义事件
+    var eve = new Event('test');
+    ev.addEventListener('test',function() {
+      console.log('test dispatch');
+    });
+    setTimeout(function () {
+      ev.dispatchEvent(eve);
+    },1000)
+  </script>
+</body>
+</html>

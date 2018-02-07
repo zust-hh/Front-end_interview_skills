@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    html * {
+      padding: 0;
+      margin: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <section id="sec">
+    <style media="screen">
+      #sec {
+        background: yellow;
+        /* overflow: hidden; 加了这句高度就变 110px*/
+      }
+
+      .child {
+        height: 100px;
+        margin-top: 10px;
+        background: orange;
+      }
+    </style>
+    <article class="child"></article>
+  </section>
+
+  <!-- BFC使用场景 -->
+  <!-- 使用场景1：解决边距问题 -->
+  <!-- BFC垂直方向边距重叠 -->
+  <section id="margin">
+    <style>
+      #margin {
+        background: pink;
+        overflow: hidden;
+      }
+
+      /* 元素上下边距会重叠 */
+
+      #margin>p {
+        margin: 5px auto 25px;
+        background: red;
+      }
+    </style>
+    <p>1</p>
+    <!-- 创建一个BFC的父元素即可解决 -->
+    <div style="overflow:hidden">
+      <p>2</p>
+    </div>
+    <p>3</p>
+  </section>
+
+  <!-- BFC不与float重叠 -->
+  <!-- 使用场景2：解决float布局问题 -->
+  <section id="layout">
+    <style>
+      #layout {
+        background: green;
+      }
+      .left {
+        float: left;
+        width: 100px;
+        height: 100px;
+        background: pink;
+      }
+      /* 右边比左边高，右边多出的部分会倾入左侧 */
+      .right {
+        height: 110px;
+        background: #ccc;
+        /* overflow: auto */
+        /* 解决：把right做成BFC */
+      }
+    </style>
+    <div class="left"></div>
+    <div class="right"></div>
+  </section>
+
+  <!-- 使用场景3：清除浮动，BFC使浮动元素高度参与计算 -->
+  <!-- 子元素是浮动，父元素高度为0 -->
+  <section id="float">
+    <style>
+      #float {
+        /* overflow: auto; */
+        background: red;
+      }
+      .float {
+        float: left;
+      }
+    </style>
+    <div class="float">我是浮动元素</div>
+  </section>
+</body>
+
+</html>

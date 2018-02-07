@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    html {
+      width: 100%
+    }
+
+    body {
+      width: 100%;
+    }
+
+    section {
+      margin-top: 10px;
+    }
+
+    .left {
+      height: 100px;
+      width: 300px;
+    }
+
+    .center {
+      height: 100px;
+    }
+
+    .right {
+      width: 300px;
+      height: 100px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- float 实现 因为center占据文档流，所以一定要放后面 -->
+  <section class="float">
+    <style media="screen">
+      .float .left {
+        width: 300px;
+        background: #00ff00;
+        float: left;
+      }
+
+      .float .center {
+        background: #ff00ff;
+      }
+
+      .float .right {
+        width: 300px;
+        background: #0000ff;
+        float: right;
+      }
+    </style>
+    <article>
+      <div class="left"></div>
+      <div class="right"></div>
+      <div class="center">
+        <h2>float解决方案</h2>
+        1.这是三栏布局中间部分
+      </div>
+    </article>
+  </section>
+
+  <!-- 绝对布局实现 -->
+  <section class="absolute">
+    <style>
+      .absolute article div {
+        position: absolute;
+      }
+
+      .absolute .left {
+        left: 0;
+        width: 300px;
+        background: #00ff00;
+      }
+
+      .absolute .center {
+        left: 300px;
+        right: 300px;
+        width: auto;
+        background: #ff00ff;
+      }
+
+      .absolute .right {
+        right: 0;
+        background: #0000ff;
+        width: 300px;
+      }
+    </style>
+    <article>
+      <div class="left"></div>
+      <div class="center">
+        <h2>绝对定位解决方案</h2>
+        1.这是三栏布局绝对定位中间部分
+      </div>
+      <div class="right"></div>
+    </article>
+  </section>
+
+  <!-- flex实现 -->
+  <section class="flex-box">
+    <style>
+      .flex-box {
+        margin-top: 120px;
+      }
+
+      .flex-box article {
+        display: flex;
+      }
+
+      .flex-box .left {
+        width: 300px;
+        background: #00ff00;
+      }
+
+      .flex-box .center {
+        flex: 1;
+        background: #ff00ff;
+      }
+
+      .flex-box .right {
+        background: #0000ff;
+        width: 300px;
+      }
+    </style>
+    <article>
+      <div class="left"></div>
+      <div class="center">
+        <h2>flex-box解决方案</h2>
+        1.这是三栏布局中间部分
+      </div>
+      <div class="right"></div>
+    </article>
+  </section>
+
+  <!-- table实现 -->
+  <section class="table">
+    <style>
+      .table article {
+        width: 100%;
+        display: table;
+      }
+
+      .table div {
+        display: table-cell;
+      }
+
+      .table .left {
+        width: 300px;
+        background: #00ff00;
+      }
+
+      .table .center {
+        background: #ff00ff;
+      }
+
+      .table .right {
+        background: #0000ff;
+        width: 300px;
+      }
+    </style>
+    <article>
+      <div class="left"></div>
+      <div class="center">
+        <h2>table解决方案</h2>
+        1.这是三栏布局中间部分
+      </div>
+      <div class="right"></div>
+    </article>
+  </section>
+
+  <!-- grid实现 -->
+  <section class="grid">
+    <style>
+      .grid article {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 300px auto 300px;
+      }
+
+      .grid div {
+        display: table-cell;
+      }
+
+      .grid .left {
+        background: #00ff00;
+      }
+
+      .grid .center {
+        background: #ff00ff;
+      }
+
+      .grid .right {
+        background: #0000ff;
+      }
+    </style>
+    <article>
+      <div class="left"></div>
+      <div class="center">
+        <h2>grid解决方案</h2>
+        1.这是三栏布局中间部分
+      </div>
+      <div class="right"></div>
+    </article>
+  </section>
+</body>
+</html>
