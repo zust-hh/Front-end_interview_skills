@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <!-- <script src="./defer1.js" charset="utf-8" defer></script>
+  <script src="./defer2.js" charset="utf-8" defer></script> -->
+    <script src="./defer1.js" async></script>
+    <script src="./defer2.js" async></script>
+  </head>
+<body>
+  <div class="test">
+    test
+    <script>
+      document.write('<span>write</span>')
+    </script>
+    <script>
+      for(var i = 0;i<200000;i++) {
+        if(i % 20000 === 0) {
+          console.log(i);
+        }
+      }
+    </script>
+  </div>
+</body>
+</html>

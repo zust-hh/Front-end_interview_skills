@@ -1,0 +1,20 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    // 资源加载错误，可以用捕获获取
+    window.addEventListener('error',function (e) {
+      console.log("捕获"+e);
+    },true)
+  </script>
+</head>
+<body>
+  <script src="//baidu.com/test.js"></script>
+  <script>
+    (new Image()).src = 'http://baidu.com/tesjk?r=tksjk';
+  </script>
+</body>
+</html>
