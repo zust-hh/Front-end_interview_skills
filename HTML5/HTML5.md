@@ -63,3 +63,95 @@
 ![aside](../images/aside.png)
 
 * time元素与微格式、pubdate属性
+
+## 新增非主体结构元素
+
+* header元素
+
+![header](../images/header.png)
+
+* footer元素
+
+![footer](../images/footer.png)
+
+* hgroup元素
+
+![hgroup](../images/hgroup.png)
+
+* address元素
+
+![address](../images/address.png)
+
+## HTML5网页编排规则
+
+1. 显示编排内容区域块
+  * 使用section等元素创建每一块
+2. 隐式编排内容区域块
+  * 用hgroup、h1~h6自动把各内容区域块分出来
+3. 自动分级
+  * 根据标题等级自动分级
+4. 不同区域块可以使用同一级别标题
+
+## 表单新增元素和属性
+
+* form属性
+
+![form](../images/form.png)
+
+* formaction属性
+
+![formaction](../images/formaction.png)
+
+* formmethod属性
+
+![formmethod](../images/formmethod.png)
+
+* formenctype属性
+
+![formenctype](../images/formenctype.png)
+
+* formtarget属性
+
+![formtarget](../images/formtarget.png)
+
+* autofocus属性
+
+画面打开时，该控件自动获得焦点
+
+* required属性
+
+在提交时，如果元素中内容为空白，则不允许提交，同时在浏览器中显示信息提示文字
+
+* labels属性
+
+![labels](../images/labels.png)
+
+* 标签的control属性
+
+在标签内部放置一个表单元素，并且涌过该标签的control属性来访问该表单元素
+
+* 文本框的placeholder属性
+
+在未输入状态时显示输入提示
+
+* 文本框的list属性
+
+![list](../images/list.png)
+
+* 文本框的AutoComplete属性
+
+帮助输入所用的自动完成功能，可以增加安全性能
+
+* 文本框的pattern属性
+
+![pattern](../images/pattern.png)
+
+* 文本框的SelectionDirection属性(获取用户操作)
+
+![SelectionDirection](../images/SelectionDirection.png)
+
+* 复选框的indeterminate属性
+
+新增除选取或未选取以外的尚未明确选取或不选取属性
+
+* image提交按钮的height属性与width属性

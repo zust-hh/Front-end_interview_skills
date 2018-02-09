@@ -131,6 +131,213 @@
       </p>
     </header>
   </article>
+
+
+
+  <header>
+    <h1>it最新技术</h1>
+    <a href="http://baidu.com">百度</a>
+    <nav>
+      <ul>
+        <li>学习</li>
+        <li>技术</li>
+        <li>讨论</li>
+      </ul>
+    </nav>
+  </header>
+
+
+
+
+  <hgroup>
+    <h1>这是主标题</h1>
+    <h2>这是副标题</h2>
+    <h3>这是h3标题</h3>
+  </hgroup>
+
+
+
+
+  <address>
+    <a href="#">iwen</a>
+    <a href="#">ime</a>
+  </address>
+  <footer>
+    <div>
+      <address>
+        <a href="#">iwen</a>
+      </address>
+    </div>
+  </footer>
+
+
+
+
+  <header>
+    <h1>网页标题</h1>
+    <nav>
+      <ul>
+        <li>首页</li>
+      </ul>
+    </nav>
+  </header>
+  <article>
+    <hgroup>
+      <h1>文章主标题</h1>
+      <h2>文章子标题</h2>
+    </hgroup>
+    <p>文章正文</p>
+    <section>
+      <div>
+        <article>
+          <h1>评论标题</h1>
+          <p>评论征文</p>
+        </article>
+      </div>
+    </section>
+  </article>
+  <footer>
+    <small></small>
+  </footer>
+
+
+
+
+  <form id="testform">
+    <input type="text">
+  </form>
+  <textarea form="testform"></textarea>
+
+
+
+  <form id="testform1">
+    <input type="submit" name="s1" value="v1" formaction="xx.jsp">提交到xx.jsp
+    <input type="submit" name="s2" value="v1" formaction="yyy.jsp">提交到yyy.jsp
+    <input type="submit" name="s3" value="v1" formaction="zzz.jsp">提交到zzz.jsp
+  </form>
+
+
+
+  <form id="testform2">
+    <input type="submit" name="s1" value="v1" formmethod="POST">以post提交
+    <input type="submit" name="s2" value="v2" formmethod="GET">以GET提交
+  </form>
+
+
+  <form>
+    <input type="text" formenctype="text/plain">表单中的空格转化为+，不对特殊字符进行编码
+    <input type="text" formenctype="multipart/form-data">不对字符进行编码，在文件上传中一定使用该值
+    <input type="text" formenctype="application/x-www-form-urlencoded">发送前编码所有字符，当表单元素的action为get，将表单数据转换成一个字符
+  </form>
+
+
+  <form>
+    <input type="submit" name="s1" value="v1" formtarget="_blank">在新浏览器页面打开
+    <input type="submit" name="s2" value="v1" formtarget="_self">在当前frame打开
+    <input type="submit" name="s1" value="v1" formtarget="_parent">在当前frame的父元素中打开
+    <input type="submit" name="s2" value="v1" formtarget="_top">在当前窗口中打开
+    <input type="submit" name="s1" value="v1" formtarget="framename">在指定frame打开
+  </form>
+
+
+  <form>
+    <input type="text">
+    <input type="text" autofocus>
+  </form>
+
+
+  <form action="#">
+    <input type="text" required>
+    <button type="submit">提交</button>
+  </form>
+
+
+
+  <script>
+    function Validate() {
+      var txtName = document.getElementById('txt_name')
+      var btn = document.getElementById('btnValidate')
+      var form = document.getElementById('testform4')
+      if(txtName.Value.trim()=='') {
+        var label = document.createElement('label')
+        label.setAttribute('for','txt_name')
+        form.insertBefore(label,btn)
+        txtName.labels[1].innerHTML = '请输入姓名'
+        txtName.labels[1].setAttribute('style','font-size:9px;color:red')
+      }
+    }
+  </script>
+  <form id="testform4">
+    <label id="label" for="txt_name">姓名：</label>
+    <input id="txt_name">
+    <input type="button" id="btnValidate" value="验证" onclick="Validate()">
+  </form>
+
+
+  <script>
+    function setValue() {
+      var label1 = document.getElementById('label1')
+      var textbox = label1.control;
+      textbox.value = '010010'
+    }
+  </script>
+  <form action="">
+    <label id="label1">
+      邮编：
+      <input id="txt_zip" maxlength="6">
+      <small>请输入6位数字</small>
+    </label>
+    <input type="button" value="设置默认值" onclick="setValue()">
+  </form>
+
+
+  <form action="">
+    <input type="text" name="greeting" list="greetings">
+    <datalist id="greetings" style="display:none">
+        <option value="html5stydy">html5</option>
+        <option value="1111">11111</option>
+    </datalist>
+  </form>
+
+
+  <form action="">
+    <input type="text" name="ggg" autocomplete="" list="greent">
+    <datalist id="greetings1" style="display:none">
+        <option value="html5stydy">html5</option>
+        <option value="1111">11111</option>
+    </datalist>
+  </form>
+
+  <form action="">
+    <input type="text" pattern="[A-Z]{3}" name="part">
+    <input type="submit">
+  </form>
+
+  
+  <script>
+    function AD() {
+      var control1 = document.forms[0]['text'];
+      var Direction = control.selectionDirection;
+      alert(Direction)
+    }
+  </script>
+  <form action="">
+    <input type="text" name="text">
+    <input type="button" value="点击我" onclick="AD()">
+  </form>
+
+
+  <input type="checkbox" indeterminate id="cd">属性测试
+  <script>
+    var cb = document.getElementById('cd')
+    cb.indeterminate = true;
+  </script>
+
+
+  <form action="">
+    姓名： <input type="text" name="name">
+    <input type="image" src="../images/CSS盒模型实例题" alt="编辑" width="50px" height="50px">
+  </form>
 </body>
 
 </html>
