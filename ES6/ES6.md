@@ -269,7 +269,7 @@ console.log(list.next().value);
 * 主动抛出错误 使用 throw new Error('')
 * 严谨模式 在函数体头部 'use strict'
 * 获得需要传递的参数个数 function.length
-* 箭头函数 () => {}
+* 箭头函数 () => {} ，与普通函数的区别是，箭头函数的this指向外部空间
 
 ## ES6中的函数和数组补漏
 
