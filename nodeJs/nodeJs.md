@@ -1,4 +1,4 @@
-# Node.js 学习第一天
+# Node.js 学习
 
 ## Node.js 简介
 
@@ -76,5 +76,74 @@ Node.js无法挑战老牌3P
 
 ### 调试 (14)
 
-* Inspector
+* Inspector （chrome://inspect）
 * VS Code
+
+## Node.js基础API
+
+### path(和路径有关的一切) (21)
+
+* normalize (把一切路径转换为标准路径) （15）
+* join (将给出的结果路径拼接成标准路径) （16）
+* resolve (将相对路径返回绝对路径) （17）
+* name（18）
+  * basename （自己的名）
+  * extname (拓展名)
+  * dirname （文件夹名）
+* parse (解析文件名,返回一个name对象) (19)
+* format (把name对象转换回去) (19)
+* 系统相关 (20)
+  * sep
+  * delimiter
+  * win32
+  * posix
+* 总结：
+  * __dirname、__filename总是返回文件的绝对路径
+  * process.cwd()总是返回执行node命令所在文件夹
+  * ./在require方法中总是相对当前文件所在文件夹
+  * ./在其他地方和process.cwd()一样
+
+### Buffer（缓冲）
+
+》 Buffer用来处理二进制数据流
+》 实例类似整数数组，大小固定
+》 C++代码在V8堆外分配物理内存
+
+* 创建： (22)
+  * alloc()
+  * allocunsafe()
+  * from()
+* class方法(Buffer.) (23)
+  * byteLength()
+  * isBuffer()
+  * concat()
+* 实例方法 (24)
+  * length
+  * toString()
+  * fill()
+  * equals()
+  * indexOf()
+  * copy()
+* 处理中文 (25)
+
+### events(事件)
+
+* 一般的监听处理事件 （26）
+* 传参的监听处理事件 （27）
+* 只执行一次的监听处理事件 （28）
+* 移除绑定事件 （29）
+
+### fs(文件系统)
+
+* readFile （30）
+* writeFile （31）
+* stats(文件信息相关) (32)
+* rename (33)
+* unlink （删除） (34)
+* readdir （读文件夹） (35)
+* mkdir (36)
+* rmdir (37)
+* watch (监视文件变化) (38)
+* readstream (数据流) (39)
+* writestream (40)
+* promisify (解决回调地狱) (41)
