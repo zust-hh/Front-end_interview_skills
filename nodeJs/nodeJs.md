@@ -147,3 +147,37 @@ Node.js无法挑战老牌3P
 * readstream (数据流) (39)
 * writestream (40)
 * promisify (解决回调地狱) (41)
+
+## 本地构建
+
+### gulp
+
+常用方法：
+
+* task
+* src
+* watch
+
+常用库：
+
+* gulp-less 解析less
+* gulp-antoprefixer 自动加浏览器兼容前缀
+* gulp-clean-css 压缩css
+* gulp-babel 构建javascript
+
+### babel
+
+### webpack
+
+* 配置文件
+  * entry 定义入口文件
+  * output 输出结果相关
+    * path 输出目标路径
+    * filename 打包出来的文件名
+  * module 模块
+    * rules 模块规则，配置loader、解析器等选项
+  * externals 忽略某些js，不要打包
+  * plugin 放多页面共同引用的js处理，或者忽略引用了但是没用的js
+
+* 需要把css单独打包，在config中引入extract-text-webpack-plugin
+* 忽略引用了但是没用的js，在config中引入 uglifyjs-webpack-plugin
