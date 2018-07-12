@@ -320,7 +320,7 @@ console.log('a' in obj);  //true
 let arr=[,,,,,];
 console.log(0 in arr); //false
 
-let arr1=['jspang','技术胖'];
+let arr1=['hh','HH'];
 console.log(0 in arr1);  // true
 ```
 
@@ -883,7 +883,7 @@ import {a,add} form './temp';//也可以分开写
 2.export default
 
 ```js
-export default var a='jspang';
+export default var a='hh';
 ```
 
 对应的引入方式
