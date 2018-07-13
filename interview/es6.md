@@ -712,6 +712,36 @@ new Promise(step1).then(function(val){
 });
 ```
 
+* promise.all & promise.race
+
+```js
+// 接收promise对象数组
+// 待全部完成，统一执行success
+Promise.all([result1, result2]).then(datas => {
+    console.log(datas[0]);
+    console.log(datas[1]);
+})
+
+// 接收promise对象数组
+// 其中一个完成，就执行success
+Promise.race([result1, result2]).then(data => {
+    console.log(data);
+})
+```
+
+* async await
+
+```js
+// await 后面跟的是一个Promise实例
+const load = async function() {
+    const result1 = await loadImg(src1)
+    console.log(result1)
+    const result2 = await loadImg(src2)
+    console.log(result2)
+}
+load()
+```
+
 ## class类的使用
 
 我们在ES5中经常使用方法或者对象去模拟类的使用，虽然可以实现功能，但是代码并不优雅，ES6为我们提供了类的使用。需要注意的是我们在写类的时候和ES5中的对象和构造函数要区分开来，不要学混了。
