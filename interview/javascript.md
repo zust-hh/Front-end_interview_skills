@@ -452,6 +452,22 @@ f1()  // 100
     fn()
   }
   F2(f1)  //100
+
+  function isFirstLoad() {
+    var _list = [];
+    return function (id) {
+      if(_list.indexOf(id) >= 0) {
+        return false;
+      } else {
+        _list.push(id);
+        return true;
+      }
+    }
+  }
+  var firstLoad = isFirstLoad();
+  firstLoad(10); // true
+  firstLoad(10); // false
+  firstLoad(20); // true
   ```
 
 # 4 异步和单线程
