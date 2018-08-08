@@ -1,0 +1,17 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    // #50 实现 js 数据类型的判断
+    const type = (obj) => {
+      return Object.prototype.toString.call(obj).split(' ')[1].split(']')[0].toLowerCase();
+    }
+    type(new Date)
+  </script>
+</head>
+<body>
+</body>
+</html>

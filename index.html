@@ -1,0 +1,66 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    const timeout = ms => new Promise((resolve, reject) => {
+	setTimeout(() => {
+		resolve();
+	}, ms);
+});
+
+const ajax1 = () => timeout(2000).then(() => {
+	console.log('1');
+	return 1;
+});
+
+const ajax2 = () => timeout(1000).then(() => {
+	console.log('2');
+	return 2;
+});
+
+const ajax3 = () => timeout(2000).then(() => {
+	console.log('3');
+	return 3;
+});
+
+// const mergePromise = ajaxArray => {
+//   let mediumFuc = Promise.resolve();
+//   let data = [];
+//   for(let promise of ajaxArray){
+//     mediumFuc = mediumFuc.then((num) => {
+//       if (num) {
+//         data.push(num);
+//       }
+//       return promise();
+//     });
+//   }
+//   return mediumFuc.then((val) => {
+//     data.push(val)
+//     return data;
+//   });
+// };
+
+const mergePromise = ajaxArray => 
+  ajaxArray.reduce((promise, func) =>
+    promise.then(result => 
+      func()
+      .then(
+        Array.prototype.concat.bind(result)
+      )
+    ),
+  Promise.resolve([])
+);
+
+mergePromise([ajax1, ajax2, ajax3]).then(data => {
+	console.log('done');
+	console.log(data); // data 为 [1, 2, 3]
+});
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
